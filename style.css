@@ -556,3 +556,7 @@ ul {
     transform: scale(1.08);
   }
 }/*# sourceMappingURL=style.css.map */
+
+#projects, #skills, #about, #contact {
+  scroll-margin-top: 120px;
+}
