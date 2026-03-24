@@ -1,0 +1,694 @@
+// ─────────────────────────────────────────
+// PROMĚNNÉ
+// ─────────────────────────────────────────
+
+$bg:             #0e0e0f;
+$bg2:            #161618;
+$bg3:            #1e1e21;
+
+$border:         rgba(255, 255, 255, 0.07);
+$border-strong:  rgba(255, 255, 255, 0.14);
+
+$text:           #f0ede8;
+$muted:          #888580;
+
+$accent:         #7de0a4;   // zelená — primární accent
+$accent2:        #4fc3f7;   // modrá — sekundární accent
+
+$font-head:      'Syne', sans-serif;
+$font-mono:      'IBM Plex Mono', monospace;
+
+// Breakpoints
+$bp-mobile: 600px;
+$bp-tablet: 900px;
+
+
+// ─────────────────────────────────────────
+// RESET & BASE
+// ─────────────────────────────────────────
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: $bg;
+  color: $text;
+  font-family: $font-mono;
+  font-size: 14px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba($accent, 0.25);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+
+// ─────────────────────────────────────────
+// LAYOUT
+// ─────────────────────────────────────────
+
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 72px 0;
+
+  &--tight {
+    padding-top: 0;
+  }
+
+  &--last {
+    padding-bottom: 80px;
+  }
+
+  // Hlavička každé sekce
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
+
+    h2 {
+      font-family: $font-head;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+  }
+
+  &__num {
+    font-size: 11px;
+    color: $accent;
+    letter-spacing: 0.1em;
+  }
+
+  &__line {
+    flex: 1;
+    height: 1px;
+    background: $border;
+  }
+}
+
+
+// ─────────────────────────────────────────
+// NAVIGACE
+// ─────────────────────────────────────────
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba($bg, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid $border;
+  transition: box-shadow 0.3s;
+
+  // Přidá stín při scrollování (přidáváno přes JS)
+  &.scrolled {
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  &__inner {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    font-family: $font-mono;
+    font-size: 13px;
+    color: $accent;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: 28px;
+
+    a {
+      color: $muted;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $text;
+      }
+    }
+
+    @media (max-width: $bp-mobile) {
+      display: none;
+    }
+  }
+
+  // Hamburger – viditelný jen na mobilu
+  &__burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+
+    span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: $muted;
+      transition: all 0.25s;
+    }
+
+    &.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    &.open span:nth-child(2) { opacity: 0; }
+    &.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    @media (max-width: $bp-mobile) {
+      display: flex;
+    }
+  }
+
+  // Mobilní dropdown menu
+  &__mobile {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid $border;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+
+    &.open {
+      max-height: 300px;
+    }
+
+    a {
+      display: block;
+      padding: 14px 24px;
+      color: $muted;
+      font-size: 13px;
+      border-bottom: 1px solid $border;
+      transition: color 0.2s, background 0.2s;
+
+      &:hover {
+        color: $text;
+        background: $bg2;
+      }
+    }
+
+    @media (max-width: $bp-mobile) {
+      display: flex;
+    }
+  }
+}
+
+
+// ─────────────────────────────────────────
+// TLAČÍTKA
+// ─────────────────────────────────────────
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-family: $font-mono;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+
+  &--primary {
+    background: $accent;
+    color: $bg;
+    font-weight: 500;
+
+    &:hover {
+      background: lighten($accent, 10%);
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: $muted;
+    border: 1px solid $border-strong;
+
+    &:hover {
+      color: $text;
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+  }
+}
+
+
+// ─────────────────────────────────────────
+// HERO
+// ─────────────────────────────────────────
+
+.hero {
+  padding: 140px 0 80px;
+  position: relative;
+  overflow: hidden;
+
+  &__bg-glow {
+    position: absolute;
+    top: -120px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(ellipse at center, rgba($accent, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+    // Jemná animace glowu
+    animation: glowPulse 6s ease-in-out infinite;
+  }
+
+  &__label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: $accent;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &::before {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: $accent;
+    }
+  }
+
+  &__name {
+    font-family: $font-head;
+    font-size: clamp(42px, 7vw, 68px);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    color: $text;
+    margin-bottom: 24px;
+
+    .dim {
+      color: $muted;
+      font-weight: 600;
+    }
+  }
+
+  &__desc {
+    font-size: 14px;
+    color: $muted;
+    max-width: 520px;
+    line-height: 1.9;
+    margin-bottom: 36px;
+
+    strong {
+      color: $text;
+      font-weight: 500;
+    }
+  }
+
+  &__cta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+}
+
+
+// ─────────────────────────────────────────
+// PROJEKTY
+// ─────────────────────────────────────────
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  border: 1px solid $border;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.project {
+  background: $bg2;
+  padding: 24px 28px;
+  border-bottom: 1px solid $border;
+  transition: background 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: $bg3;
+
+    .project__arrow {
+      opacity: 1;
+      transform: translate(2px, -2px);
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+
+  &__top-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__title {
+    font-family: $font-head;
+    font-size: 17px;
+    font-weight: 600;
+    color: $text;
+  }
+
+  &__arrow {
+    font-size: 16px;
+    color: $muted;
+    opacity: 0;
+    transition: all 0.2s;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  &__desc {
+    color: $muted;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+}
+
+
+// ─────────────────────────────────────────
+// TAGY & BADGE
+// ─────────────────────────────────────────
+
+.tag {
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 4px;
+  background: rgba($accent, 0.08);
+  color: $accent;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba($accent, 0.12);
+
+  &--blue {
+    background: rgba($accent2, 0.08);
+    color: $accent2;
+    border-color: rgba($accent2, 0.12);
+  }
+
+  &--gray {
+    background: rgba(255, 255, 255, 0.04);
+    color: $muted;
+    border-color: $border;
+  }
+}
+
+.badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+
+  &--live {
+    background: rgba($accent, 0.12);
+    color: $accent;
+    border: 1px solid rgba($accent, 0.2);
+
+    &::before {
+      content: '● ';
+      font-size: 7px;
+    }
+  }
+}
+
+
+// ─────────────────────────────────────────
+// SKILLS
+// ─────────────────────────────────────────
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.skill-group {
+  background: $bg2;
+  border: 1px solid $border;
+  border-radius: 8px;
+  padding: 18px 20px;
+
+  &__title {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: $accent;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+}
+
+
+// ─────────────────────────────────────────
+// O MNĚ
+// ─────────────────────────────────────────
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+
+  @media (max-width: $bp-mobile) {
+    grid-template-columns: 1fr;
+  }
+
+  &__text {
+    color: $muted;
+    font-size: 13px;
+    line-height: 1.9;
+
+    p + p {
+      margin-top: 14px;
+    }
+
+    strong {
+      color: $text;
+      font-weight: 500;
+    }
+
+    a {
+      color: $accent;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    border: 1px solid $border;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: $bg2;
+  border-bottom: 1px solid $border;
+  font-size: 12px;
+  transition: background 0.2s;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: $bg3;
+  }
+
+  &--accent .stat__val {
+    color: $accent;
+  }
+
+  &__label {
+    color: $muted;
+  }
+
+  &__val {
+    color: $text;
+    font-weight: 500;
+
+    a {
+      color: $accent2;
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+
+// ─────────────────────────────────────────
+// KONTAKT
+// ─────────────────────────────────────────
+
+.contact {
+  background: $bg2;
+  border: 1px solid $border;
+  border-radius: 10px;
+  padding: 32px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+
+  @media (max-width: $bp-mobile) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__text {
+    h3 {
+      font-family: $font-head;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    p {
+      color: $muted;
+      font-size: 13px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}
+
+
+// ─────────────────────────────────────────
+// FOOTER
+// ─────────────────────────────────────────
+
+.footer {
+  padding: 32px 0;
+  border-top: 1px solid $border;
+  text-align: center;
+  font-size: 12px;
+  color: $muted;
+}
+
+
+// ─────────────────────────────────────────
+// SCROLL REVEAL ANIMACE
+// ─────────────────────────────────────────
+
+// Výchozí stav — prvky jsou neviditelné
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+
+  // Stav po zobrazení (přidáváno přes JS)
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Zpoždění pro hero sekci (efekt postupného vyjetí)
+.hero .reveal {
+  &:nth-child(1) { transition-delay: 0.05s; }
+  &:nth-child(2) { transition-delay: 0.15s; }
+  &:nth-child(3) { transition-delay: 0.28s; }
+  &:nth-child(4) { transition-delay: 0.42s; }
+}
+
+
+// ─────────────────────────────────────────
+// ANIMACE (keyframes)
+// ─────────────────────────────────────────
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.6; transform: scale(1.08); }
+}

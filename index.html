@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adam Jiřík — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">adam@jirik:~$</a>
+      <ul class="nav__links">
+        <li><a href="#projects">projekty</a></li>
+        <li><a href="#skills">skills</a></li>
+        <li><a href="#about">o mně</a></li>
+        <li><a href="#contact">kontakt</a></li>
+      </ul>
+      <button class="nav__burger" id="navBurger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="navMobile">
+      <a href="#projects">projekty</a>
+      <a href="#skills">skills</a>
+      <a href="#about">o mně</a>
+      <a href="#contact">kontakt</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <p class="hero__label reveal">CS student · MFF UK</p>
+      <h1 class="hero__name reveal">Adam<br><span class="dim">Jiřík</span></h1>
+      <p class="hero__desc reveal">
+        Baví mě Linux, low-level programování a systémové věci.
+        Dělám projekty aby pochopil, jak věci fungují uvnitř, kde se výsledek dá reálně využít.
+        Stavím věci — od <strong>RISC-V emulátoru</strong> v Pythonu,
+        <strong>self-hosted infrastrukturu</strong> na Raspberry Pi až po <strong>webové stránky</strong>.
+      </p>
+      <div class="hero__cta reveal">
+        <a href="#projects" class="btn btn--primary">Prohlédnout projekty</a>
+        <a href="https://github.com/adajir-git" target="_blank" class="btn btn--ghost">GitHub ↗</a>
+        <!-- VYPLŇ: cesta k tvému CV souboru -->
+        <a href="files/adam_jirik_cv.pdf" download class="btn btn--ghost">Stáhnout CV ↓</a>
+      </div>
+    </div>
+    <div class="hero__bg-glow" aria-hidden="true"></div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__num">01</span>
+        <h2>Projekty</h2>
+        <div class="section__line"></div>
+      </div>
+
+      <div class="projects">
+
+        <a class="project reveal" href="https://github.com/adajir-git/RISCV-Emulator" target="_blank">
+          <div class="project__top">
+            <span class="project__title">RISC-V Emulátor</span>
+            <span class="project__arrow">↗</span>
+          </div>
+          <p class="project__desc">
+            Emulátor RISC-V procesoru napsaný v Pythonu jako závěrečný projekt z Programování 1.
+            Implementuje instrukční sadu RV32I — fetch, decode, execute cyklus, registry, paměť.
+            Dobrý příklad toho, jak si přečíst ISA specifikaci a přeložit ji do funkčního kódu.
+          </p>
+          <div class="project__tags">
+            <span class="tag">Python</span>
+            <span class="tag tag--gray">low-level</span>
+            <span class="tag tag--gray">emulation</span>
+            <span class="tag tag--gray">RISC-V</span>
+          </div>
+        </a>
+
+        <a class="project reveal" href="https://github.com/adajir-git/RaspberryPi-HomeLab" target="_blank">
+          <div class="project__top">
+            <span class="project__title">Raspberry Pi HomeLab</span>
+            <div class="project__top-right">
+              <span class="badge badge--live">live</span>
+              <span class="project__arrow">↗</span>
+            </div>
+          </div>
+          <p class="project__desc">
+            Dual-node self-hosted infrastruktura. Docker, Zero Trust networking (Cloudflare Tunnel),
+            full observability stack — Prometheus, Grafana, logy. Běží doma 24/7.
+            Naučilo mě to víc o sítích a DevOps než jakýkoliv kurz.
+          </p>
+          <div class="project__tags">
+            <span class="tag tag--green">Shell</span>
+            <span class="tag tag--blue">Docker</span>
+            <span class="tag tag--blue">Networking</span>
+            <span class="tag tag--blue">Prometheus</span>
+            <span class="tag tag--blue">Grafana</span>  
+          </div>
+        </a>
+
+        <a class="project reveal" href="https://zednictvi-binder.cz" target="_blank">
+          <div class="project__top">
+            <span class="project__title">zednictvi-binder.cz</span>
+            <div class="project__top-right">
+              <span class="badge badge--live">live</span>
+              <span class="project__arrow">↗</span>
+            </div>
+          </div>
+          <p class="project__desc">
+            Reálný freelance projekt — web pro lokální zednickou firmu.
+            Čistý HTML/CSS/JS, žádný framework, nasazeno v produkci.
+            První projekt, za který mi někdo zaplatil.
+          </p>
+          <div class="project__tags">
+            <span class="tag tag--green">HTML</span>
+            <span class="tag tag--green">CSS</span>
+            <span class="tag tag--green">JavaScript</span>
+            <span class="tag tag--blue">freelance</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section section--tight" id="skills">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__num">02</span>
+        <h2>Co umím</h2>
+        <div class="section__line"></div>
+      </div>
+      <div class="skills reveal">
+        <div class="skill-group">
+          <p class="skill-group__title">Jazyky</p>
+          <div class="skill-group__tags">
+            <span class="tag">Python</span>
+            <span class="tag tag--gray">HTML/CSS</span>
+            <span class="tag tag--gray">JavaScript</span>
+            <span class="tag tag--gray">Bash</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group__title">Infra & DevOps</p>
+          <div class="skill-group__tags">
+            <span class="tag tag--blue">Docker</span>
+            <span class="tag tag--blue">Linux</span>
+            <span class="tag tag--blue">Networking</span>
+            <span class="tag tag--blue">Grafana</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group__title">Nástroje</p>
+          <div class="skill-group__tags">
+            <span class="tag tag--gray">Git</span>
+            <span class="tag tag--gray">GitHub</span>
+            <span class="tag tag--gray">VS Code</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group__title">Oblasti</p>
+          <div class="skill-group__tags">
+            <span class="tag">Low-level</span>
+            <span class="tag tag--gray">Systems</span>
+            <span class="tag tag--gray">Web</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section section--tight" id="about">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__num">03</span>
+        <h2>O mně</h2>
+        <div class="section__line"></div>
+      </div>
+      <div class="about">
+        <div class="about__text reveal">
+          <p>
+            Jsem student <strong>informatiky na MFF UK</strong> (2. semestr Bc.).
+            K Linuxu a low-level věcem mě přivedla zvědavost a vášeň — chci jednou
+            pracovat jako <strong>Linux administrátor</strong>.
+            Baví mě taky lineární algebra a matematika obecně.
+          </p>
+          <p>
+            Pracuji part-time jako konzultant u <strong>Konica Minolta I.T. Solutions</strong>
+            — Business Central, Azure, AL. Mimo to dělám weby a vlastní projekty (to je ta největší zábava).
+          </p>
+          <p>
+            Pokud tě moje projekty zaujaly a hledáš někoho na brigádu — klidně napiš.
+          </p>
+        </div>
+        <div class="about__stats reveal">
+          <div class="stat">
+            <span class="stat__label">škola</span>
+            <span class="stat__val">MFF UK, Praha</span>
+          </div>
+          <div class="stat">
+            <span class="stat__label">obor</span>
+            <span class="stat__val">Informatika (Bc.), 2. semestr</span>
+          </div>
+          <div class="stat">
+            <span class="stat__label">brigáda</span>
+            <span class="stat__val">Konica Minolta I.T.S.</span>
+          </div>
+          <div class="stat stat--accent">
+            <span class="stat__label">status</span>
+            <span class="stat__val">otevřený nabídkám</span>
+          </div>
+          <div class="stat">
+            <span class="stat__label">jazyky</span>
+            <span class="stat__val">CZ / EN</span>
+          </div>
+          <div class="stat">
+            <span class="stat__label">GitHub</span>
+            <span class="stat__val">
+              <a href="https://github.com/adajir-git" target="_blank">adajir-git ↗</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section--tight section--last" id="contact">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="section__num">04</span>
+        <h2>Kontakt</h2>
+        <div class="section__line"></div>
+      </div>
+      <div class="contact reveal">
+        <div class="contact__text">
+          <h3>Pojďme se pobavit.</h3>
+          <p>Stáž, brigáda, freelance, open-source nebo jen zajímavý projekt — napiš.</p>
+        </div>
+        <div class="contact__links">
+          <!-- VYPLŇ: svůj skutečný e-mail -->
+          <a href="mailto:adam@jirik.ch" class="btn btn--primary">Napsat e-mail</a>
+          <a href="https://github.com/adajir-git" target="_blank" class="btn btn--ghost">GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Adam Jiřík &nbsp;·&nbsp; Postaveno v čistém HTML/CSS/JS</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
