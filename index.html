@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <canvas id="bg-canvas"></canvas>
 
   <!-- NAV -->
   <nav class="nav" id="nav">
@@ -46,7 +47,6 @@
       <div class="hero__cta reveal">
         <a href="#projects" class="btn btn--primary">Prohlédnout projekty</a>
         <a href="https://github.com/adajir-git" target="_blank" class="btn btn--ghost">GitHub ↗</a>
-        <!-- VYPLŇ: cesta k tvému CV souboru -->
         <a href="files/adam_jirik_cv.pdf" download class="btn btn--ghost">Stáhnout CV ↓</a>
       </div>
     </div>
@@ -96,7 +96,7 @@
             Naučilo mě to víc o sítích a DevOps než jakýkoliv kurz.
           </p>
           <div class="project__tags">
-            <span class="tag tag--green">Shell</span>
+            <span class="tag">Shell</span>
             <span class="tag tag--blue">Docker</span>
             <span class="tag tag--blue">Networking</span>
             <span class="tag tag--blue">Prometheus</span>
@@ -118,10 +118,31 @@
             První projekt, za který mi někdo zaplatil.
           </p>
           <div class="project__tags">
-            <span class="tag tag--green">HTML</span>
-            <span class="tag tag--green">CSS</span>
-            <span class="tag tag--green">JavaScript</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
             <span class="tag tag--blue">freelance</span>
+          </div>
+        </a>
+
+        <a class="project reveal" href="https://github.com/adajir-git/my-website-portfolio" target="_blank">
+          <div class="project__top">
+            <span class="project__title">jirik.ch — Portfolio</span>
+            <div class="project__top-right">
+              <span class="badge badge--live">live</span>
+              <span class="project__arrow">↗</span>
+            </div>
+          </div>
+          <p class="project__desc">
+            Osobní portfolio postavené v čistém HTML, SCSS a JS.
+            Žádný framework, žádné závislosti — jen vanilla kód.
+            Scroll reveal animace, mobilní menu, nasazeno na vlastní doméně.
+          </p>
+          <div class="project__tags">
+            <span class="tag tag--gray">HTML</span>
+            <span class="tag tag--gray">SCSS</span>
+            <span class="tag tag--gray">JavaScript</span>
+            <span class="tag tag--gray">FTP deploy</span>
           </div>
         </a>
 
@@ -141,12 +162,13 @@
         <div class="skill-group">
           <p class="skill-group__title">Jazyky</p>
           <div class="skill-group__tags">
-            <span class="tag tag--green">C#</span>
-            <span class="tag tag--green">C++</span>
-            <span class="tag tag--green">C</span>
-            <span class="tag tag--green">Python</span>
-            <span class="tag tag--green">HTML/CSS/SCSS</span>
-            <span class="tag tag--green">Bash</span>
+            <span class="tag">C#</span>
+            <span class="tag">C++</span>
+            <span class="tag">C</span>
+            <span class="tag">Python</span>
+            <span class="tag">HTML/CSS/SCSS</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Bash</span>
             <span class="tag tag--gray">JavaScript</span>
             <span class="tag tag--gray">AL</span>
           </div>
@@ -154,7 +176,7 @@
         <div class="skill-group">
           <p class="skill-group__title">Infra & DevOps</p>
           <div class="skill-group__tags">
-            <span class="tag tag--blue">Linux</span>
+            <span class="tag tag--blue">Linux - Arch, Fedora, Debian</span>
             <span class="tag tag--blue">Networking</span>
             <span class="tag tag--blue">Docker</span>
             <span class="tag tag--blue">Grafana</span>
@@ -164,19 +186,20 @@
         <div class="skill-group">
           <p class="skill-group__title">Nástroje</p>
           <div class="skill-group__tags">
-            <span class="tag tag--gray">Git</span>
-            <span class="tag tag--gray">GitHub</span>
-            <span class="tag tag--gray">GitLab</span>
-            <span class="tag tag--gray">VS</span>
-            <span class="tag tag--gray">VS Code</span>
+            <span class="tag tag--blue">Git</span>
+            <span class="tag tag--blue">VS</span>
+            <span class="tag tag--blue">VS Code</span>
+            <span class="tag tag--gray">Business Central</span>
           </div>
         </div>
         <div class="skill-group">
           <p class="skill-group__title">Oblasti</p>
           <div class="skill-group__tags">
+            <span class="tag">Linux Admin</span>
             <span class="tag">Low-level</span>
+            <span class="tag">Web</span>
+            <span class="tag tag--gray">Algorithms</span>
             <span class="tag tag--gray">Systems</span>
-            <span class="tag tag--gray">Web</span>
           </div>
         </div>
       </div>
@@ -253,9 +276,9 @@
           <p>Stáž, brigáda, freelance, open-source nebo jen zajímavý projekt — napiš.</p>
         </div>
         <div class="contact__links">
-          <!-- VYPLŇ: svůj skutečný e-mail -->
           <a href="mailto:adam@jirik.ch" class="btn btn--primary">Napsat e-mail</a>
           <a href="https://github.com/adajir-git" target="_blank" class="btn btn--ghost">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/adam-ji%C5%99%C3%ADk-188647266/" target="_blank" class="btn btn--ghost">LinkedIn ↗</a>
         </div>
       </div>
     </div>
