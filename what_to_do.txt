@@ -1,0 +1,42 @@
+=========================================================
+PLÁN ÚPRAV PORTFOLIA (jirik.ch) - HARDCORE INŽENÝRSKÝ STYL
+=========================================================
+
+1. HERO SEKCE (Úvodní text nahoře)
+---------------------------------------------------------
+[ ] Opravit gramatickou chybu: "Dělám projekty aby pochopil" -> "abych pochopil".
+[ ] Nahradit stávající text tímto údernějším:
+    "Baví mě zkoumat, co se děje pod pokličkou. Od low-level programování v C/C++ přes stavbu RISC-V emulátoru v Pythonu až po správu vlastní linuxové infrastruktury. Nestavím jen weby, chci rozumět celému stacku."
+
+2. PROJEKTY (Ukázat myšlení, ne jen kód)
+---------------------------------------------------------
+[ ] Změnit pořadí: Web "zednictvi-binder.cz" přesunout až na ÚPLNÝ KONEC seznamu. Nahoru dát RISC-V a HomeLab.
+[ ] Ke každému technickému projektu přidat odrážky s výzvou a tím, co mi to dalo.
+
+    * RISC-V Emulátor:
+      - Přidat: "Největší výzva: Správné dekódování bitových polí instrukcí a pochopení paměťového modelu."
+      - Přidat: "Naučeno: Hardwarová logika procesoru z pohledu softwaru, detailní práce s ISA specifikací."
+      
+    * Raspberry Pi HomeLab:
+      - Přidat: "Největší výzva: Bezpečné vystavení služeb do internetu bez veřejné IP a otevírání portů."
+      - Přidat: "Řešení: Nasazení Cloudflare Tunnels (Zero Trust architektura)."
+
+    Nebo něco na ten způsob, tento styl se mi moc nelíbil když jsem ho tam dal. Ty si poradíš.
+
+3. SKILLS (Sekce "Co umím")
+---------------------------------------------------------
+[ ] Zrušit nepřehledný mrak tagů a rozdělit technologie podle reálných zkušeností, aby to působilo důvěryhodněji.
+    * Kategorie 1: "Aktivně používám" (např. Linux, Python, Git, Docker, Bash)
+    * Kategorie 2: "Mám ze školy / Zkoumám" (např. C, C++, Architektura systémů, Algoritmy)
+    * Kategorie 3: "Web & Nástroje" (např. HTML/CSS/JS, SQL, VS Code, Grafana)
+
+    Taky nevím jak na to. Ty si poradíš :).
+
+4. VIZUÁL A DESIGN (Šlápnout do "Terminál" stylu)
+---------------------------------------------------------
+[ ] Tlačítka: Odstranit zaoblení. 
+    - V CSS (třída `.btn`) změnit `border-radius: 6px;` na `border-radius: 0;`. Budou ostřejší a víc "tech".
+    (tady s tím si nejsem jistý, usuď ty, ale toto se mi líbí zatím jak to je s tím radiem.)
+[ ] Karty projektů (Terminálová okna):
+    - Přidat k `.project` třídě horní lištu, která bude simulovat záhlaví terminálu.
+    - Do levého horního rohu této lišty umístit tři barevná kolečka (červené, žluté, zelené), typická pro okna v macOS/Linuxu. (Prostě aby to vypadalo hezky jako terminálové okno, ty si zas a znovu poradíš :)))
