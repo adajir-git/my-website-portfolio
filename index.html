@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adam Jiřík — Portfolio</title>
+  <title>Adam Jiřík — Portfolio & Služby</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
@@ -18,7 +18,7 @@
       <ul class="nav__links">
         <li><a href="#projects">projekty</a></li>
         <li><a href="#skills">skills</a></li>
-        <li><a href="#about">o mně</a></li>
+        <li><a href="#about">o mně & služby</a></li>
         <li><a href="#contact">kontakt</a></li>
       </ul>
       <button class="nav__burger" id="navBurger" aria-label="Menu">
@@ -28,7 +28,7 @@
     <div class="nav__mobile" id="navMobile">
       <a href="#projects">projekty</a>
       <a href="#skills">skills</a>
-      <a href="#about">o mně</a>
+      <a href="#about">o mně & služby</a>
       <a href="#contact">kontakt</a>
     </div>
   </nav>
@@ -36,16 +36,16 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="container">
-      <p class="hero__label reveal">CS student · MFF UK</p>
+      <p class="hero__label reveal">Linux Administrátor · VSHosting</p>
       <h1 class="hero__name reveal">Adam<br><span class="dim">Jiřík</span></h1>
       <p class="hero__desc reveal">
-        Baví mě Linux, low-level programování a systémové věci.
-        Dělám projekty abych pochopil, jak věci fungují uvnitř, kde se výsledek dá reálně využít.
-        Stavím věci — od <strong>RISC-V emulátoru</strong> v Pythonu,
-        <strong>self-hosted infrastrukturu</strong> na Raspberry Pi až po <strong>webové stránky</strong>.
+        Zajišťuji správu serverů, webovou infrastrukturu a síťové služby. 
+        U technologií mě baví jít do hloubky a chápat, jak přesně systémy fungují. 
+        Od enterprise prostředí v práci, přes <strong>self-hosted homelab</strong>, 
+        až po návrh a bezpečnou správu infrastruktury pro <strong>reálné klienty a byznysy</strong>.
       </p>
       <div class="hero__cta reveal">
-        <a href="#projects" class="btn btn--primary">Prohlédnout projekty</a>
+        <a href="#about" class="btn btn--primary">Služby & Spolupráce</a>
         <a href="https://github.com/adajir-git" target="_blank" class="btn btn--ghost">GitHub ↗</a>
         <a href="files/aji_cv.pdf" download class="btn btn--ghost">Stáhnout CV ↓</a>
       </div>
@@ -64,6 +64,71 @@
 
       <div class="projects">
 
+        <a class="project reveal" href="https://github.com/adajir-git/RaspberryPi-HomeLab" target="_blank">
+          <div class="project__term-bar">
+            <div class="project__dots">
+              <span class="dot dot--red"></span>
+              <span class="dot dot--yellow"></span>
+              <span class="dot dot--green"></span>
+            </div>
+            <span class="project__term-title">homelab ~ bash</span>
+          </div>
+          <div class="project__body">
+            <div class="project__top">
+              <span class="project__title">Self-hosted Infrastruktura</span>
+              <div class="project__top-right">
+                <span class="badge badge--live">live</span>
+                <span class="project__arrow">↗</span>
+              </div>
+            </div>
+            <p class="project__desc">
+              Dual-node self-hosted infrastruktura (Raspberry Pi 5 a Pi 2). Docker, Zero Trust networking, full observability stack:  Prometheus (node-exporter), Grafana. Běží 24/7.
+            </p>
+            <div class="project__insight">
+              <span class="project__insight-label">výzva</span>
+              Bezpečné vystavení služeb do internetu bez veřejné IP a bez otevírání portů.
+            </div>
+            <div class="project__insight">
+              <span class="project__insight-label">řešení</span>
+              Cloudflare Tunnels — Zero Trust architektura. Správa a přístup k uzlům přes Tailscale.
+            </div>
+            <div class="project__tags">
+              <span class="tag">Linux</span>
+              <span class="tag tag--blue">Docker</span>
+              <span class="tag tag--blue">Networking</span>
+              <span class="tag tag--blue">Prometheus</span>
+              <span class="tag tag--blue">Grafana</span>
+              <span class="tag tag--blue">Tailscale</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="project reveal" href="https://github.com/adajir-git/certificate-checker" target="_blank">
+          <div class="project__term-bar">
+            <div class="project__dots">
+              <span class="dot dot--red"></span>
+              <span class="dot dot--yellow"></span>
+              <span class="dot dot--green"></span>
+            </div>
+            <span class="project__term-title">cert-checker ~ bash</span>
+          </div>
+          <div class="project__body">
+            <div class="project__top">
+              <span class="project__title">Custom Certificate Checker</span>
+              <span class="project__arrow">↗</span>
+            </div>
+            <p class="project__desc">
+            Vlastní skriptovaný nástroj pro kontrolu SSL/TLS certifikátů. Kontroluje expiraci a validitu dle domény a upozorňuje na blížící se konec platnosti.
+            </p>
+            <div class="project__tags">
+              <span class="tag">Bash / Python</span>
+              <span class="tag tag--blue">TLS/SSL</span>
+              <span class="tag tag--blue">Monitoring</span>
+              <span class="tag tag--gray">Automation</span>
+            </div>
+          </div>
+        </a>
+
         <a class="project reveal" href="https://github.com/adajir-git/RISCV-Emulator" target="_blank">
           <div class="project__term-bar">
             <div class="project__dots">
@@ -79,127 +144,43 @@
               <span class="project__arrow">↗</span>
             </div>
             <p class="project__desc">
-              Emulátor RISC-V procesoru napsaný v Pythonu jako závěrečný projekt z předmětu Programování 1 na UK.
-              Implementuje instrukční sadu RV32I — fetch, decode, execute cyklus, registry, paměť, unit testy.
+              Emulátor procesoru (RV32I) napsaný v Pythonu jako semestrální projekt na MFF UK.
+              Implementuje fetch-decode-execute cyklus, registry, paměťový model a unit testy podle oficiální ISA specifikace.
             </p>
-            <div class="project__insight">
-              <span class="project__insight-label">výzva</span>
-              Správné dekódování bitových polí instrukcí a pochopení paměťového modelu.
-            </div>
-            <div class="project__insight">
-              <span class="project__insight-label">co jsem se naučil</span>
-              Hardwarová logika procesoru z pohledu softwaru, jak číst ISA specifikaci a datasheety.
-            </div>
             <div class="project__tags">
               <span class="tag">Python</span>
               <span class="tag tag--gray">low-level</span>
-              <span class="tag tag--gray">emulation</span>
-              <span class="tag tag--gray">RISC-V</span>
+              <span class="tag tag--gray">Architektura</span>
             </div>
           </div>
         </a>
 
-        <a class="project reveal" href="https://github.com/adajir-git/RaspberryPi-HomeLab" target="_blank">
+        <a class="project reveal" href="https://github.com/adajir-git/zednictvi-binder-web" target="_blank">
           <div class="project__term-bar">
             <div class="project__dots">
               <span class="dot dot--red"></span>
               <span class="dot dot--yellow"></span>
               <span class="dot dot--green"></span>
             </div>
-            <span class="project__term-title">homelab ~ bash</span>
+            <span class="project__term-title">klient ~ http</span>
           </div>
           <div class="project__body">
             <div class="project__top">
-              <span class="project__title">Raspberry Pi HomeLab</span>
+              <span class="project__title">Firemní web: zednictvi-binder.cz</span>
               <div class="project__top-right">
                 <span class="badge badge--live">live</span>
                 <span class="project__arrow">↗</span>
               </div>
             </div>
             <p class="project__desc">
-              Dual-node self-hosted infrastruktura. Docker, Zero Trust networking, full observability stack
-              — Prometheus, Grafana, logy. Běží 24/7.
-            </p>
-            <div class="project__insight">
-              <span class="project__insight-label">výzva</span>
-              Bezpečné vystavení služeb do internetu bez veřejné IP a bez otevírání portů.
-            </div>
-            <div class="project__insight">
-              <span class="project__insight-label">řešení</span>
-              Cloudflare Tunnels — Zero Trust architektura, žádný otevřený port. Připojování přes Tailscale.
-            </div>
-            <div class="project__tags">
-              <span class="tag">Shell</span>
-              <span class="tag tag--blue">Docker</span>
-              <span class="tag tag--blue">Networking</span>
-              <span class="tag tag--blue">Prometheus</span>
-              <span class="tag tag--blue">Grafana</span>
-              <span class="tag tag--blue">File server</span>
-              <span class="tag tag--blue">Tailscale</span>
-              <span class="tag tag--blue">Online Minecraft Server</span>
-              <span class="tag tag--blue">Gitea</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="project reveal" href="https://github.com/adajir-git/my-website-portfolio" target="_blank">
-          <div class="project__term-bar">
-            <div class="project__dots">
-              <span class="dot dot--red"></span>
-              <span class="dot dot--yellow"></span>
-              <span class="dot dot--green"></span>
-            </div>
-            <span class="project__term-title">jirik.ch ~ zsh</span>
-          </div>
-          <div class="project__body">
-            <div class="project__top">
-              <span class="project__title">jirik.ch — Portfolio</span>
-              <div class="project__top-right">
-                <span class="badge badge--live">live</span>
-                <span class="project__arrow">↗</span>
-              </div>
-            </div>
-            <p class="project__desc">
-              Osobní portfolio postavené v čistém HTML, SCSS a JS.
-              Žádný framework, žádné závislosti — jen vanilla kód.
-              Scroll reveal animace, mobilní menu, nasazeno na vlastní doméně.
+              Reálný klientský projekt — web pro lokální zednickou firmu.
+              Od kompletního kódu v čistém HTML/SCSS/JS bez frameworků, až po zajištění domény a nasazení do produkce.
             </p>
             <div class="project__tags">
-              <span class="tag">HTML</span>
-              <span class="tag">SCSS</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag tag--gray">FTP deploy</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="project reveal" href="https://zednictvi-binder.cz" target="_blank">
-          <div class="project__term-bar">
-            <div class="project__dots">
-              <span class="dot dot--red"></span>
-              <span class="dot dot--yellow"></span>
-              <span class="dot dot--green"></span>
-            </div>
-            <span class="project__term-title">zednictvi-binder.cz ~ http</span>
-          </div>
-          <div class="project__body">
-            <div class="project__top">
-              <span class="project__title">zednictvi-binder.cz</span>
-              <div class="project__top-right">
-                <span class="badge badge--live">live</span>
-                <span class="project__arrow">↗</span>
-              </div>
-            </div>
-            <p class="project__desc">
-              Reálný freelance projekt — web pro lokální zednickou firmu.
-              Čistý HTML/SCSS/JS, žádný framework, nasazeno v produkci.
-              První projekt, za který mi někdo zaplatil.
-            </p>
-            <div class="project__tags">
-              <span class="tag">HTML</span>
-              <span class="tag">SCSS</span>
+              <span class="tag">HTML/SCSS</span>
               <span class="tag">JavaScript</span>
               <span class="tag tag--gray">freelance</span>
+              <span class="tag tag--gray">hosting</span>
             </div>
           </div>
         </a>
@@ -219,50 +200,48 @@
       <div class="skills reveal">
 
         <div class="skill-group skill-group--featured">
-          <p class="skill-group__title">~/infrastruktura</p>
+          <p class="skill-group__title">~/server_admin</p>
           <div class="skill-group__tags">
-            <span class="tag">Linux</span>
-            <span class="tag">Docker</span>
-            <span class="tag tag--blue">Bash</span>
-            <span class="tag tag--blue">Networking</span>
-            <span class="tag tag--blue">Grafana</span>
-            <span class="tag tag--blue">Prometheus</span>
+            <span class="tag">Linux (Debian, Arch, Fedora)</span>
+            <span class="tag">Ansible</span>
+            <span class="tag tag--blue">SSH / FTP</span>
+            <span class="tag tag--blue">Grafana / Prometheus</span>
+            <span class="tag tag--blue">TLS / DNS</span>
+            <span class="tag tag--blue">Cloudflare</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-group__title">~/web_and_mail</p>
+          <div class="skill-group__tags">
+            <span class="tag">Nginx / Apache</span>
+            <span class="tag">PHP (CLI, FPM)</span>
+            <span class="tag tag--gray">Virtual Hosts</span>
+            <span class="tag tag--gray">Reverse Proxy</span>
+            <span class="tag tag--gray">DKIM / DMARC / SPF</span>
+            <span class="tag tag--gray">Anubis</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-group__title">~/databases</p>
+          <div class="skill-group__tags">
+            <span class="tag tag--blue">MariaDB</span>
+            <span class="tag tag--blue">MySQL</span>
+            <span class="tag tag--blue">PostgreSQL</span>
+            <span class="tag tag--blue">MongoDB</span>
+            <span class="tag tag--blue">Redis</span>
           </div>
         </div>
 
         <div class="skill-group">
           <p class="skill-group__title">~/development</p>
           <div class="skill-group__tags">
-            <span class="tag">Python</span>
-            <span class="tag">C / C++</span>
-            <span class="tag">Git</span>
-            <span class="tag tag--gray">Raspberry Pi</span>
-            <span class="tag tag--gray">Arduino</span>
-            <span class="tag tag--gray">Algoritmy</span>
-            <span class="tag tag--gray">Datové struktury</span>
-            <span class="tag tag--gray">Architektura</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <p class="skill-group__title">~/enterprise_and_web</p>
-          <div class="skill-group__tags">
-            <span class="tag tag--blue">SQL</span>
-            <span class="tag tag--blue">HTML/SCSS/JS</span>
-            <span class="tag tag--blue">C# / .NET</span>
-            <span class="tag tag--gray">Business Central</span>
-            <span class="tag tag--gray">AL</span>
-          </div>
-        </div>
-
-        <div class="skill-group">
-          <p class="skill-group__title">~/hw_background</p>
-          <div class="skill-group__tags">
-            <span class="tag tag--gray">C / C#</span>
-            <span class="tag tag--gray">Sériová linka & IO karty</span>
-            <span class="tag tag--gray">Hardware control</span>
-            <span class="tag tag--gray">DCF77</span>
-            <span class="tag tag--gray">MAX7219</span>
+            <span class="tag tag--gray">Bash</span>
+            <span class="tag tag--gray">Python</span>
+            <span class="tag tag--gray">Git</span>
+            <span class="tag tag--gray">HTML/SCSS/JS</span>
+            <span class="tag tag--gray">AL (Business Central)</span>
           </div>
         </div>
 
@@ -270,52 +249,44 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ABOUT & SERVICES -->
   <section class="section section--tight" id="about">
     <div class="container">
       <div class="section__header reveal">
         <span class="section__num">03</span>
-        <h2>O mně</h2>
+        <h2>O mně & Služby</h2>
         <div class="section__line"></div>
       </div>
       <div class="about">
         <div class="about__text reveal">
           <p>
-            Jsem student <strong>informatiky na MFF UK</strong> (2. semestr Bc.).
-            Moje cesta k IT začala už na základní škole, kde jsem vytvářel webové stránky. Na střední jsem v C a C# oživoval hardware přes sériové linky a IO karty (ovládání robotické ruky, výtahu, dekódování DCF77 času, LED řádek...).
-            Tahle low-level práce mě ale plynule dovedla k tomu, co mě dnes baví nejvíc — <strong>k operačním systémům a infrastruktuře</strong>.
+            Jsem <strong>Junior Linux Administrátor ve firmě VSHosting</strong>.
+            Moje cesta k IT začala u vývoje webových stránek a programování hardwaru a sériových linek, ale potřeba chápat, jak fungují složité celky, mě plynule dovedla k mé dnešní vášni — <strong>k Linux serverům, sítím, serverové infrastruktuře</strong>.
           </p>
           <p>
-            Můj hlavní cíl je profilovat se jako <strong>Linux administrátor</strong>. Místo programování čipů mě teď naplňuje správa serverů a sítě. Ze školy mě baví Počítačové systémy, Linux, programování, algoritmy, lineární algebra a matematika obecně.
+            V každodenní enterprise praxi řeším provoz webových serverů, mailových serverů a správu databází. Zkušenosti s algoritmy a sítěmi jsem získal během studia na MFF UK a ve formálním vzdělávání nyní pokračuji v kombinovaném režimu na UJEP.
           </p>
           <p>
-            Pracuji part-time jako konzultant u <strong>Konica Minolta I.T. Solutions</strong>
-            — Business Central, Azure, AL. Mimo to dělám weby a stavím si vlastní homelab.
-          </p>
-          <p>
-            Pokud tě moje směřování zaujalo a hledáš někoho na Linux/sysadmin brigádu — klidně napiš.
+            <strong>Freelance spolupráce:</strong><br>
+            Kromě své hlavní práce nabízím kapacity pro klienty jako freelancer. Zajištuji menším firmám bezpečné nasazení file serverů a správu infrastruktury včetně aktivního monitoringu. Zajišťuji konfiguraci VPS (Hetzner), nasazování Docker kontejnerů, zálohování databází, řešení problémů s doručitelností e-mailů nebo kompletní správu domén a DNS záznamů.
           </p>
         </div>
         <div class="about__stats reveal">
           <div class="stat">
-            <span class="stat__label">škola</span>
-            <span class="stat__val">MFF UK, Praha</span>
+            <span class="stat__label">pozice</span>
+            <span class="stat__val">Linux Administrátor</span>
           </div>
           <div class="stat">
-            <span class="stat__label">obor</span>
-            <span class="stat__val">Informatika (Bc.), 2. semestr</span>
+            <span class="stat__label">zaměstnání</span>
+            <span class="stat__val">VSHosting</span>
           </div>
           <div class="stat">
-            <span class="stat__label">brigáda</span>
-            <span class="stat__val">Konica Minolta I.T. Solutions</span>
+            <span class="stat__label">vzdělání</span>
+            <span class="stat__val">UJEP (od 09/2026)</span>
           </div>
           <div class="stat stat--accent">
-            <span class="stat__label">status</span>
-            <span class="stat__val">otevřený nabídkám</span>
-          </div>
-          <div class="stat">
-            <span class="stat__label">jazyky</span>
-            <span class="stat__val">CZ / EN</span>
+            <span class="stat__label">freelance služby</span>
+            <span class="stat__val">přijímám klienty</span>
           </div>
           <div class="stat">
             <span class="stat__label">GitHub</span>
@@ -326,7 +297,7 @@
           <div class="stat">
             <span class="stat__label">LinkedIn</span>
             <span class="stat__val">
-              <a href="https://www.linkedin.com/in/adam-ji%C5%99%C3%ADk-188647266/" target="_blank">LinkedIn ↗</a>
+              <a href="https://www.linkedin.com/in/adajir" target="_blank">LinkedIn ↗</a>
             </span>
           </div>
         </div>
@@ -344,12 +315,11 @@
       </div>
       <div class="contact reveal">
         <div class="contact__text">
-          <h3>Pojďme se pobavit.</h3>
-          <p>Stáž, brigáda, freelance, open-source nebo jen zajímavý projekt — napiš.</p>
+          <h3>Hledáš spolehlivého admina?</h3>
+          <p>Potřebuješ pomoct se správou serverů, infrastrukturou, řešíš technický problém ve svém projektu nebo chceš jen networkovat? Napiš mi :)</p>
         </div>
         <div class="contact__links">
           <a href="mailto:adam@jirik.ch" class="btn btn--primary">Napsat e-mail</a>
-          <a href="https://github.com/adajir-git" target="_blank" class="btn btn--ghost">GitHub ↗</a>
           <a href="https://www.linkedin.com/in/adajir" target="_blank" class="btn btn--ghost">LinkedIn ↗</a>
         </div>
       </div>
@@ -359,7 +329,7 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <p>© 2026 Adam Jiřík &nbsp;·&nbsp; Student MFF UK &nbsp;·&nbsp; Computer Science</p>
+      <p>© 2026 Adam Jiřík &nbsp;·&nbsp; Linux Administrator & Freelancer</p>
     </div>
   </footer>
 
