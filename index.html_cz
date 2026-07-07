@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adam Jiřík — Portfolio & Services</title>
+  <title>Adam Jiřík — Portfolio & Služby</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
@@ -16,38 +16,38 @@
     <div class="nav__inner">
       <a href="#" class="nav__logo">adam@jirik:~$</a>
       <ul class="nav__links">
-        <li><a href="#projects">projects</a></li>
+        <li><a href="#projects">projekty</a></li>
         <li><a href="#skills">skills</a></li>
-        <li><a href="#about">about & services</a></li>
-        <li><a href="#contact">contact</a></li>
+        <li><a href="#about">o mně & služby</a></li>
+        <li><a href="#contact">kontakt</a></li>
       </ul>
       <button class="nav__burger" id="navBurger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="nav__mobile" id="navMobile">
-      <a href="#projects">projects</a>
+      <a href="#projects">projekty</a>
       <a href="#skills">skills</a>
-      <a href="#about">about & services</a>
-      <a href="#contact">contact</a>
+      <a href="#about">o mně & služby</a>
+      <a href="#contact">kontakt</a>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="container">
-      <p class="hero__label reveal">Linux Administrator · VSHosting</p>
+      <p class="hero__label reveal">Linux Administrátor · VSHosting</p>
       <h1 class="hero__name reveal">Adam<br><span class="dim">Jiřík</span></h1>
       <p class="hero__desc reveal">
-        I handle server administration, monitoring and infrastructure. 
-        I love diving deep into technologies to understand exactly how systems work under the hood. 
-        From enterprise environments at work, through my <strong>self-hosted homelab</strong>, 
-        to designing and securely managing infrastructure for <strong>real clients and businesses</strong>.
+        Zajišťuji správu serverů, webovou infrastrukturu a síťové služby. 
+        U technologií mě baví jít do hloubky a chápat, jak přesně systémy fungují. 
+        Od enterprise prostředí v práci, přes <strong>self-hosted homelab</strong>, 
+        až po návrh a bezpečnou správu infrastruktury pro <strong>reálné klienty a byznysy</strong>.
       </p>
       <div class="hero__cta reveal">
-        <a href="#about" class="btn btn--primary">Services & Collaboration</a>
+        <a href="#about" class="btn btn--primary">Služby & Spolupráce</a>
         <a href="https://github.com/adajir-git" target="_blank" class="btn btn--ghost">GitHub ↗</a>
-        <a href="files/aji_cv.pdf" download class="btn btn--ghost">Download CV ↓</a>
+        <a href="files/aji_cv.pdf" download class="btn btn--ghost">Stáhnout CV ↓</a>
       </div>
     </div>
     <div class="hero__bg-glow" aria-hidden="true"></div>
@@ -58,7 +58,7 @@
     <div class="container">
       <div class="section__header reveal">
         <span class="section__num">01</span>
-        <h2>Projects</h2>
+        <h2>Projekty</h2>
         <div class="section__line"></div>
       </div>
 
@@ -75,22 +75,22 @@
           </div>
           <div class="project__body">
             <div class="project__top">
-              <span class="project__title">Self-hosted Infrastructure</span>
+              <span class="project__title">Self-hosted Infrastruktura</span>
               <div class="project__top-right">
                 <span class="badge badge--live">live</span>
                 <span class="project__arrow">↗</span>
               </div>
             </div>
             <p class="project__desc">
-              Dual-node self-hosted infrastructure (Raspberry Pi 5 and Pi 2). Docker, Zero Trust networking, full observability stack: Prometheus (node-exporter), Grafana. Running 24/7.
+              Dual-node self-hosted infrastruktura (Raspberry Pi 5 a Pi 2). Docker, Zero Trust networking, full observability stack:  Prometheus (node-exporter), Grafana. Běží 24/7.
             </p>
             <div class="project__insight">
-              <span class="project__insight-label">challenge</span>
-              Securely exposing services to the internet without a public IP and without opening incoming ports.
+              <span class="project__insight-label">výzva</span>
+              Bezpečné vystavení služeb do internetu bez veřejné IP a bez otevírání portů.
             </div>
             <div class="project__insight">
-              <span class="project__insight-label">solution</span>
-              Cloudflare Tunnels — Zero Trust architecture. Node management and secure access via Tailscale.
+              <span class="project__insight-label">řešení</span>
+              Cloudflare Tunnels — Zero Trust architektura. Správa a přístup k uzlům přes Tailscale.
             </div>
             <div class="project__tags">
               <span class="tag">Linux</span>
@@ -118,7 +118,7 @@
               <span class="project__arrow">↗</span>
             </div>
             <p class="project__desc">
-              Custom scripted tool for checking SSL/TLS certificates. It validates expiration dates and domain validity, providing alerts for approaching certificate expirations.
+            Vlastní skriptovaný nástroj pro kontrolu SSL/TLS certifikátů. Kontroluje expiraci a validitu dle domény a upozorňuje na blížící se konec platnosti.
             </p>
             <div class="project__tags">
               <span class="tag">Bash / Python</span>
@@ -139,16 +139,17 @@
           </div>
           <div class="project__body">
             <div class="project__top">
-              <span class="project__title">RISC-V Emulator</span>
+              <span class="project__title">RISC-V Emulátor</span>
               <span class="project__arrow">↗</span>
             </div>
             <p class="project__desc">
-              Processor emulator (RV32I) written in Python as a final project at MFF UK. Implements the fetch-decode-execute cycle, registers, memory model, and unit tests according to the official ISA specification.
+              Emulátor procesoru (RV32I) napsaný v Pythonu jako semestrální projekt na MFF UK.
+              Implementuje fetch-decode-execute cyklus, registry, paměťový model a unit testy podle oficiální ISA specifikace.
             </p>
             <div class="project__tags">
               <span class="tag">Python</span>
               <span class="tag tag--gray">low-level</span>
-              <span class="tag tag--gray">Architecture</span>
+              <span class="tag tag--gray">Architektura</span>
             </div>
           </div>
         </a>
@@ -160,18 +161,19 @@
               <span class="dot dot--yellow"></span>
               <span class="dot dot--green"></span>
             </div>
-            <span class="project__term-title">client ~ http</span>
+            <span class="project__term-title">klient ~ http</span>
           </div>
           <div class="project__body">
             <div class="project__top">
-              <span class="project__title">Company Website: zednictvi-binder.cz</span>
+              <span class="project__title">Firemní web: zednictvi-binder.cz</span>
               <div class="project__top-right">
                 <span class="badge badge--live">live</span>
                 <span class="project__arrow">↗</span>
               </div>
             </div>
             <p class="project__desc">
-              Real-world client project — a website for a local masonry company. Covered everything from writing the complete code in pure HTML/SCSS/JS without frameworks, to securing the domain and deploying to production.
+              Reálný klientský projekt — web pro lokální zednickou firmu.
+              Od kompletního kódu v čistém HTML/SCSS/JS bez frameworků, až po zajištění domény a nasazení do produkce.
             </p>
             <div class="project__tags">
               <span class="tag">HTML/SCSS</span>
@@ -191,7 +193,7 @@
     <div class="container">
       <div class="section__header reveal">
         <span class="section__num">02</span>
-        <h2>Skills</h2>
+        <h2>Co umím</h2>
         <div class="section__line"></div>
       </div>
       <div class="skills reveal">
@@ -251,39 +253,39 @@
     <div class="container">
       <div class="section__header reveal">
         <span class="section__num">03</span>
-        <h2>About & Services</h2>
+        <h2>O mně & Služby</h2>
         <div class="section__line"></div>
       </div>
       <div class="about">
         <div class="about__text reveal">
           <p>
-            I am a <strong>Junior Linux Administrator at VSHosting</strong>.
-            My journey into IT started with web development, programming hardware and serial interfaces. However, the drive to understand how complex systems work naturally led me to my current passion — <strong>Linux servers, networking, and server infrastructure</strong>.
+            Jsem <strong>Junior Linux Administrátor ve firmě VSHosting</strong>.
+            Moje cesta k IT začala u vývoje webových stránek a programování hardwaru a sériových linek, ale potřeba chápat, jak fungují složité celky, mě plynule dovedla k mé dnešní vášni — <strong>k Linux serverům, sítím, serverové infrastruktuře</strong>.
           </p>
           <p>
-            In my daily enterprise practice, I handle the operation of web servers, mail servers, and databases. I gained a strong foundation in algorithms and networking while studying Computer Science at MFF UK, and I am currently continuing my formal education part-time at UJEP.
+            V každodenní enterprise praxi řeším provoz webových serverů, mailových serverů a správu databází. Zkušenosti s algoritmy a sítěmi jsem získal během studia na MFF UK a ve formálním vzdělávání nyní pokračuji v kombinovaném režimu na UJEP.
           </p>
           <p>
-            <strong>Freelance Services:</strong><br>
-            Alongside my main job, I take on freelance clients. I help smaller businesses with secure file server deployments and infrastructure management, including active monitoring. I provide VPS configuration, docker container deployment, backups, and complete domain and DNS management.
+            <strong>Freelance spolupráce:</strong><br>
+            Kromě své hlavní práce nabízím kapacity pro klienty jako freelancer. Zajištuji menším firmám bezpečné nasazení file serverů a správu infrastruktury včetně aktivního monitoringu. Zajišťuji konfiguraci VPS (Hetzner), nasazování Docker kontejnerů, zálohování databází, řešení problémů s doručitelností e-mailů nebo kompletní správu domén a DNS záznamů.
           </p>
         </div>
         <div class="about__stats reveal">
           <div class="stat">
-            <span class="stat__label">role</span>
-            <span class="stat__val">Linux Administrator</span>
+            <span class="stat__label">pozice</span>
+            <span class="stat__val">Linux Administrátor</span>
           </div>
           <div class="stat">
-            <span class="stat__label">company</span>
+            <span class="stat__label">zaměstnání</span>
             <span class="stat__val">VSHosting</span>
           </div>
           <div class="stat">
-            <span class="stat__label">education</span>
-            <span class="stat__val">MFF UK - Computer Science</span>
+            <span class="stat__label">vzdělání</span>
+            <span class="stat__val">Matfyz - Informatika</span>
           </div>
           <div class="stat stat--accent">
-            <span class="stat__label">freelance status</span>
-            <span class="stat__val">accepting clients</span>
+            <span class="stat__label">freelance služby</span>
+            <span class="stat__val">přijímám klienty</span>
           </div>
           <div class="stat">
             <span class="stat__label">GitHub</span>
@@ -307,16 +309,16 @@
     <div class="container">
       <div class="section__header reveal">
         <span class="section__num">04</span>
-        <h2>Contact</h2>
+        <h2>Kontakt</h2>
         <div class="section__line"></div>
       </div>
       <div class="contact reveal">
         <div class="contact__text">
-          <h3>Looking for a reliable admin?</h3>
-          <p>Do you need help with server management, infrastructure, solving a technical issue in your project, or just want to network? Feel free to reach out :)</p>
+          <h3>Hledáš spolehlivého admina?</h3>
+          <p>Potřebuješ pomoct se správou serverů, infrastrukturou, řešíš technický problém ve svém projektu nebo chceš jen networkovat? Napiš mi :)</p>
         </div>
         <div class="contact__links">
-          <a href="mailto:adam@jirik.ch" class="btn btn--primary">Send an Email</a>
+          <a href="mailto:adam@jirik.ch" class="btn btn--primary">Napsat e-mail</a>
           <a href="https://www.linkedin.com/in/adajir" target="_blank" class="btn btn--ghost">LinkedIn ↗</a>
         </div>
       </div>
